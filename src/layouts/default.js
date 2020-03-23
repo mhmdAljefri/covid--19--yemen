@@ -7,7 +7,6 @@ import { Global, css } from "@emotion/core"
 
 import Header from "../components/header"
 import "./layout.css"
-import AuthButton from "../containers/AuthButton"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
