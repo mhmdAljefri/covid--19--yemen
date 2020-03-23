@@ -1,10 +1,27 @@
+require("dotenv").config()
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    title: `خليك بالبيت`,
+    description: ``,
     author: `@gatsbyjs`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-firebase`,
+      options: {
+        credentials: {
+          apiKey: process.env.YOUR_FIREBASE_API_KEY,
+          authDomain: process.env.YOUR_FIREBASE_AUTH_DOMAIN,
+          databaseURL: process.env.YOUR_FIREBASE_DATABASE_URL,
+          projectId: process.env.YOUR_FIREBASE_PROJECT_ID,
+          storageBucket: process.env.YOUR_FIREBASE_STORAGE_BUCKET,
+          messagingSenderId: process.env.YOUR_FIREBASE_MESSAGING_SENDER_ID,
+          appId: process.env.YOUR_FIREBASE_APP_ID,
+        },
+      },
+    },
+    `gatsby-plugin-theme-ui`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -18,8 +35,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `خليك بالبيت`,
+        short_name: `خليك بالبيت`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
