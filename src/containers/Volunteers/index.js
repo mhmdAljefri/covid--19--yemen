@@ -1,20 +1,18 @@
 /** @jsx jsx */
 import { Heading, jsx } from "theme-ui"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 
 import firebase from "gatsby-plugin-firebase"
 
-import GatsbyIcon from "../../images/gatsby-icon.png"
-
 export default function Volunteers() {
+  const [volunteers, setVolunteers] = useState([])
   useEffect(() => {
     const fetchData = async () => {
       const data = await firebase
         .firestore()
         .collection("users")
         .get()
-      const mappedData = data.docs.map(doc => ({ ...doc.data(), id: doc.id }))
-      console.log({ mappedData })
+      setVolunteers(data.docs.map(doc => ({ ...doc.data(), id: doc.id })))
     }
     fetchData()
   }, [])
@@ -24,7 +22,7 @@ export default function Volunteers() {
         <Heading>المتطوعيين</Heading>
       </header>
       <main sx={{ display: "flex" }}>
-        {[...Array(5)].map(() => (
+        {volunteers.map(user => (
           <div
             role="button"
             aria-label="داعم"
@@ -41,7 +39,7 @@ export default function Volunteers() {
               },
             }}
           >
-            <img src={GatsbyIcon} alt="داعم" />
+            {user.name}
           </div>
         ))}
       </main>

@@ -1,12 +1,16 @@
 /** @jsx jsx */
-import { Link as ThemedLink, jsx, Button } from "theme-ui"
+import { Link as ThemedLink, jsx } from "theme-ui"
 import PropTypes from "prop-types"
 import { Fragment } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import { Global, css } from "@emotion/core"
 
+import { ToastContainer } from "react-toastify"
+import "react-toastify/dist/ReactToastify.css"
+
 import Header from "../components/header"
 import "./layout.css"
+import RequestService from "../containers/RequestService"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -21,6 +25,7 @@ const Layout = ({ children }) => {
 
   return (
     <Fragment>
+      <ToastContainer />
       <Header>
         <div
           sx={{
@@ -36,7 +41,7 @@ const Layout = ({ children }) => {
             {data.site.siteMetadata.title}
           </ThemedLink>
           <nav>
-            <Button>طلب خدمة</Button>
+            <RequestService />
             <ThemedLink sx={{ mx: 10 }} as={Link} to="be-a-volunteer">
               المشاركة كمتطوع
             </ThemedLink>

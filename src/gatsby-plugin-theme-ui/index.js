@@ -14,6 +14,7 @@ export default {
     lightgray: "#cfcfd3",
     black: "black",
     white: "white",
+    error: "red",
   },
   fontWeights: {
     body: 400,
