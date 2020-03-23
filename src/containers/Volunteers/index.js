@@ -21,16 +21,16 @@ export default function Volunteers() {
       <header sx={{ mt: 5, textAlign: "center" }}>
         <Heading>المتطوعيين</Heading>
       </header>
-      <main sx={{ display: "flex" }}>
-        {isEmpty(volunteers) ? (
-          <div sx={{ textAlign: "center" }}>
-            <Heading>كن او المتطوعيين</Heading>
-            <Link as={GLink} to="be/-a-volunteer">
-              سجل كمتطوع
-            </Link>
-          </div>
-        ) : (
-          volunteers.map(user => (
+      {isEmpty(volunteers) ? (
+        <div sx={{ textAlign: "center" }}>
+          <Heading>كن او المتطوعيين</Heading>
+          <Link as={GLink} to="be/-a-volunteer">
+            سجل كمتطوع
+          </Link>
+        </div>
+      ) : (
+        <main sx={{ display: "flex" }}>
+          {volunteers.map(user => (
             <div
               role="button"
               aria-label="داعم"
@@ -49,9 +49,9 @@ export default function Volunteers() {
             >
               {user.name}
             </div>
-          ))
-        )}
-      </main>
+          ))}
+        </main>
+      )}
     </section>
   )
 }

@@ -23,16 +23,16 @@ export default function Sponsers() {
       <header sx={{ mt: 5, textAlign: "center" }}>
         <Heading>الداعمين</Heading>
       </header>
-      <main sx={{ display: "flex", justifyContent: "space-evenly", mt: 5 }}>
-        {isEmpty(sponsers) ? (
-          <div sx={{ textAlign: "center" }}>
-            <Heading>كن او المتطوعيين</Heading>
-            <Link as={GLink} to="be/-a-volunteer">
-              سجل كمتطوع
-            </Link>
-          </div>
-        ) : (
-          sponsers.map(user => (
+      {isEmpty(sponsers) ? (
+        <div sx={{ textAlign: "center" }}>
+          <Heading>كن او الداعمين</Heading>
+          <Link as={GLink} to="be/-a-volunteer">
+            سجل كداعم
+          </Link>
+        </div>
+      ) : (
+        <main sx={{ display: "flex", justifyContent: "space-evenly", mt: 5 }}>
+          {sponsers.map(user => (
             <div
               role="button"
               aria-label="داعم"
@@ -50,9 +50,9 @@ export default function Sponsers() {
             >
               {user.name}
             </div>
-          ))
-        )}
-      </main>
+          ))}
+        </main>
+      )}
     </section>
   )
 }
