@@ -5,6 +5,7 @@ import SEO from "../components/seo"
 import CovidStatus from "../containers/CovidStatus"
 import Sponsers from "../containers/Sponsers"
 import Intro from "../containers/Intro"
+import Volunteers from "../containers/Volunteers"
 
 const IndexPage = () => (
   <Layout>
@@ -12,6 +13,7 @@ const IndexPage = () => (
     <Intro />
     <CovidStatus />
     <Sponsers />
+    <Volunteers />
   </Layout>
 )
 

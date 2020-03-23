@@ -7,6 +7,7 @@
   "dependencies": {
     "dotenv": "^8.2.0",
     "firebase": "^7.12.0",
+    "formik": "^2.1.4",
     "fs": "^0.0.1-security",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",
@@ -22,6 +23,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
+    "react-recaptcha": "^2.3.10",
     "theme-ui": "^0.3.1"
   },
   "devDependencies": {
