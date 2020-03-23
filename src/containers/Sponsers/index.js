@@ -1,7 +1,8 @@
 /** @jsx jsx */
-import { Heading, jsx } from "theme-ui"
+import { Heading, jsx, Link } from "theme-ui"
 import { useState, useEffect } from "react"
-
+import { Link as GLink } from "gatsby"
+import isEmpty from "lodash/isEmpty"
 import firebase from "gatsby-plugin-firebase"
 
 export default function Sponsers() {
@@ -23,25 +24,34 @@ export default function Sponsers() {
         <Heading>الداعمين</Heading>
       </header>
       <main sx={{ display: "flex", justifyContent: "space-evenly", mt: 5 }}>
-        {sponsers.map(user => (
-          <div
-            role="button"
-            aria-label="داعم"
-            sx={{
-              cursor: "pointer",
-              width: 100,
-              filter: "grayscale(.5)",
-              opacity: 0.5,
-              transition: "all 400ms",
-              ":hover": {
-                filter: "grayscale(0)",
-                opacity: 1,
-              },
-            }}
-          >
-            {user.name}
+        {isEmpty(sponsers) ? (
+          <div sx={{ textAlign: "center" }}>
+            <Heading>كن او المتطوعيين</Heading>
+            <Link as={GLink} to="be/-a-volunteer">
+              سجل كمتطوع
+            </Link>
           </div>
-        ))}
+        ) : (
+          sponsers.map(user => (
+            <div
+              role="button"
+              aria-label="داعم"
+              sx={{
+                cursor: "pointer",
+                width: 100,
+                filter: "grayscale(.5)",
+                opacity: 0.5,
+                transition: "all 400ms",
+                ":hover": {
+                  filter: "grayscale(0)",
+                  opacity: 1,
+                },
+              }}
+            >
+              {user.name}
+            </div>
+          ))
+        )}
       </main>
     </section>
   )
