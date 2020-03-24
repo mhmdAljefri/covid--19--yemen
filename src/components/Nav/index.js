@@ -28,7 +28,6 @@ export default function Nav() {
     <Box
       as="nav"
       sx={{
-        minWidth: 300,
         display: "flex",
         alignItems: "center",
         flexDirection: ["column", "row"],
