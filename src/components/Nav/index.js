@@ -35,13 +35,13 @@ export default function Nav() {
       <ThemedLink sx={{ mx: 10, my: [20, 0] }} as={Link} to="/">
         الرئيسية
       </ThemedLink>
-      <RequestService />
       <ThemedLink sx={{ mx: 10, my: [20, 0] }} as={Link} to="/be-a-volunteer">
         المشاركة كمتطوع
       </ThemedLink>
-      <ThemedLink as={Link} to="/be-a-sponser">
+      <ThemedLink sx={{ mx: 10, my: [20, 0] }} as={Link} to="/be-a-sponser">
         دعم المشروع
       </ThemedLink>
+      <RequestService />
     </Box>
   )
   return (
