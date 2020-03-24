@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Input as ThemedInput, Button } from "theme-ui"
+import { jsx, Button } from "theme-ui"
 import { Heading, Flex } from "theme-ui"
 import { Formik, Form } from "formik"
 import { toast } from "react-toastify"

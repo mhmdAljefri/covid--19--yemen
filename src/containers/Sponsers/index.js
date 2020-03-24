@@ -24,10 +24,9 @@ export default function Sponsers() {
         <Heading>الداعمين</Heading>
       </header>
       {isEmpty(sponsers) ? (
-        <div sx={{ textAlign: "center" }}>
-          <Heading>كن او الداعمين</Heading>
+        <div sx={{ textAlign: "center", pt: 3 }}>
           <Link as={GLink} to="/be-a-sponser">
-            سجل كداعم
+            كن اول الداعمين
           </Link>
         </div>
       ) : (

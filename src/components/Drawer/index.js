@@ -19,11 +19,7 @@ export default function Drawer({
         style={{ direction: "ltr" }}
         {...props}
       >
-        <div
-          className="reusecore-drawer__close"
-          onClick={toggleHandler}
-          style={closeButtonStyle}
-        >
+        <div onClick={toggleHandler} style={closeButtonStyle}>
           {closeButton}
         </div>
         {children}
