@@ -26,7 +26,7 @@ export default function Sponsers() {
       {isEmpty(sponsers) ? (
         <div sx={{ textAlign: "center" }}>
           <Heading>كن او الداعمين</Heading>
-          <Link as={GLink} to="be/-a-volunteer">
+          <Link as={GLink} to="/be-a-sponser">
             سجل كداعم
           </Link>
         </div>
@@ -38,7 +38,9 @@ export default function Sponsers() {
               aria-label="داعم"
               sx={{
                 cursor: "pointer",
-                width: 100,
+                maxWidth: 200,
+                minWidth: 100,
+                textAlign: "center",
                 filter: "grayscale(.5)",
                 opacity: 0.5,
                 transition: "all 400ms",
@@ -48,7 +50,16 @@ export default function Sponsers() {
                 },
               }}
             >
-              {user.name}
+              <div
+                sx={{
+                  width: 100,
+                  height: 100,
+                  borderRadius: 100,
+                  mb: 2,
+                  backgroundColor: "primary",
+                }}
+              />
+              <p>{user.name}</p>
             </div>
           ))}
         </main>

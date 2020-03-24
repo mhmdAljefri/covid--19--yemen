@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { Button, Heading } from "theme-ui"
-import Drawer from "rc-drawer"
-import "rc-drawer/assets/index.css"
+import Drawer from "../components/Drawer"
 
 export default function RequestService() {
   const [open, setOpen] = useState(false)

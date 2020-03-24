@@ -97,7 +97,7 @@ function BeAVolunteer() {
                   />
                 </div>
                 <div sx={{ marginInlineEnd: 10 }}>
-                  <label>الجنس</label>
+                  <label htmlFor="gender">الجنس</label>
                   <Flex>
                     <Flex sx={{ alignItems: "center", marginInlineEnd: 10 }}>
                       <ThemedInput
@@ -108,7 +108,6 @@ function BeAVolunteer() {
                         id="male"
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.gender}
                         checked
                       />
                       <label htmlFor="male">ذكر</label>

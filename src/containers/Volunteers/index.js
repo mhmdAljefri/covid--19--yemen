@@ -16,6 +16,7 @@ export default function Volunteers() {
     }
     fetchData()
   }, [])
+
   return (
     <section>
       <header sx={{ mt: 5, textAlign: "center" }}>
@@ -37,7 +38,8 @@ export default function Volunteers() {
               sx={{
                 m: 1,
                 cursor: "pointer",
-                width: 50,
+                minWidth: 50,
+                maxWidth: 150,
                 filter: "grayscale(.5)",
                 opacity: 0.5,
                 transition: "all 400ms",
@@ -47,7 +49,15 @@ export default function Volunteers() {
                 },
               }}
             >
-              {user.name}
+              <div
+                sx={{
+                  width: 50,
+                  height: 50,
+                  borderRadius: 50,
+                  backgroundColor: "secondary",
+                }}
+              />
+              <small>{user.name}</small>
             </div>
           ))}
         </main>
