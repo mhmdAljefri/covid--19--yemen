@@ -1,6 +1,7 @@
 import React from "react"
 import RcDrawer from "rc-drawer"
 import "rc-drawer/assets/index.css"
+import { Button } from "theme-ui"
 
 export default function Drawer({
   children,
@@ -14,14 +15,12 @@ export default function Drawer({
   return (
     <React.Fragment>
       <RcDrawer
+        onHandleClick={toggleHandler}
         open={open}
         onClose={toggleHandler}
         style={{ direction: "ltr" }}
         {...props}
       >
-        <div onClick={toggleHandler} style={closeButtonStyle}>
-          {closeButton}
-        </div>
         {children}
       </RcDrawer>
 

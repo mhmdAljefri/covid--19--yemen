@@ -11,7 +11,7 @@ export default function CovidBox({ status, count, color }) {
         width: 250,
         textAlign: "center",
         paddingTop: 50,
-        mx: 10,
+        m: 10,
       }}
     >
       <h2>{status}</h2>

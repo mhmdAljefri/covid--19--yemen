@@ -30,7 +30,7 @@ export default function Volunteers() {
           </Link>
         </div>
       ) : (
-        <main sx={{ display: "flex" }}>
+        <main sx={{ display: "flex", flexWrap: "wrap", mt: 4 }}>
           {volunteers.map(user => (
             <div
               role="button"

@@ -10,7 +10,7 @@ import "react-toastify/dist/ReactToastify.css"
 
 import Header from "../components/header"
 import "./layout.css"
-import RequestService from "../containers/RequestService"
+import Nav from "../components/Nav"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -40,15 +40,7 @@ const Layout = ({ children }) => {
           <ThemedLink variant="links.nav" as={Link} to="/">
             {data.site.siteMetadata.title}
           </ThemedLink>
-          <nav>
-            <RequestService />
-            <ThemedLink sx={{ mx: 10 }} as={Link} to="be-a-volunteer">
-              المشاركة كمتطوع
-            </ThemedLink>
-            <ThemedLink as={Link} to="be-a-sponser">
-              دعم المشروع
-            </ThemedLink>
-          </nav>
+          <Nav />
         </div>
       </Header>
       <div

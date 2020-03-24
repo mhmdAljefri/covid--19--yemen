@@ -16,7 +16,13 @@ export default function CovidStatus() {
         <Heading>إحصائيات عالمية للمرض</Heading>
         <p>أخر تحديث: {lastUpdate}</p>
       </header>
-      <main sx={{ display: "flex", justifyContent: "space-between" }}>
+      <main
+        sx={{
+          display: "flex",
+          justifyContent: ["center", "space-between"],
+          flexWrap: ["wrap", "nowrap"],
+        }}
+      >
         <CovidBox
           color="orange"
           status="المصابين"
