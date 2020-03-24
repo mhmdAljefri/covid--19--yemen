@@ -9,7 +9,7 @@ import Volunteers from "../containers/Volunteers"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="الصفحة الرئيسية" />
     <Intro />
     <CovidStatus />
     <Sponsers />

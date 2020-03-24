@@ -33,6 +33,7 @@ export default function Sponsers() {
         <main sx={{ display: "flex", justifyContent: "space-evenly", mt: 5 }}>
           {sponsers.map(user => (
             <div
+              key={user.id}
               role="button"
               aria-label="داعم"
               sx={{

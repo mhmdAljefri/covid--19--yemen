@@ -32,11 +32,14 @@ export default function Nav() {
         flexDirection: ["column", "row"],
       }}
     >
+      <ThemedLink sx={{ mx: 10, my: [20, 0] }} as={Link} to="/">
+        الرئيسية
+      </ThemedLink>
       <RequestService />
-      <ThemedLink sx={{ mx: 10, my: [20, 0] }} as={Link} to="be-a-volunteer">
+      <ThemedLink sx={{ mx: 10, my: [20, 0] }} as={Link} to="/be-a-volunteer">
         المشاركة كمتطوع
       </ThemedLink>
-      <ThemedLink as={Link} to="be-a-sponser">
+      <ThemedLink as={Link} to="/be-a-sponser">
         دعم المشروع
       </ThemedLink>
     </Box>

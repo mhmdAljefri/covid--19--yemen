@@ -33,6 +33,7 @@ export default function Volunteers() {
         <main sx={{ display: "flex", flexWrap: "wrap", mt: 4 }}>
           {volunteers.map(user => (
             <div
+              key={user.id}
               role="button"
               aria-label="داعم"
               sx={{
