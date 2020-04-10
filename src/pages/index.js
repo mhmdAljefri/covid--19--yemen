@@ -12,6 +12,11 @@ const IndexPage = () => (
     <SEO title="الصفحة الرئيسية" />
     <Intro />
     <CovidStatus />
+    <CovidStatus
+      style={{ mt: 3 }}
+      title="إحصائيات اليمن"
+      url="https://covid19.mathdro.id/api/countries/ye/"
+    />
     <Sponsers />
     <Volunteers />
   </Layout>

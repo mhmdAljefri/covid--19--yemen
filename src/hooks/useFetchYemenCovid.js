@@ -1,20 +1,23 @@
 import { useState, useEffect } from "react"
 
-export default (url = "https://covid19.mathdro.id/api/") => {
+export default url => {
   const [error, setStateError] = useState("")
   const [data, setStateData] = useState({})
+  const [counter, setCounter] = useState(0)
   const [fetching, setFetching] = useState(true)
 
+  async function getCovidData() {
+    setCounter(1)
+    const covidOfYemen = await fetch(url)
+      .then(res => res.json())
+      .catch(err => setStateError(err))
+    setStateData(covidOfYemen)
+    setFetching(false)
+  }
+
   useEffect(() => {
-    async function getCovidData() {
-      const covidOfYemen = await fetch(url)
-        .then(res => res.json())
-        .catch(err => setStateError(err))
-      setStateData(covidOfYemen)
-      setFetching(false)
-    }
-    getCovidData()
-  }, [url])
+    if (url && counter <= 0) getCovidData()
+  }, [url, fetching])
 
   return { data, error, fetching }
 }

@@ -4,16 +4,16 @@ import { jsx, Heading } from "theme-ui"
 import CovidBox from "../components/CovidBox"
 import useFetchYemenCovid from "../hooks/useFetchYemenCovid"
 
-export default function CovidStatus() {
-  const { data } = useFetchYemenCovid()
+export default function CovidStatus({ url, title, style }) {
+  const { data } = useFetchYemenCovid({ url })
   const lastUpdate = data?.lastUpdate
     ? new Intl.DateTimeFormat().format(new Date(data.lastUpdate))
     : ""
 
   return (
-    <section>
+    <section sx={style}>
       <header sx={{ textAlign: "center", mb: 3 }}>
-        <Heading>إحصائيات عالمية للمرض</Heading>
+        <Heading>{title}</Heading>
         <p>أخر تحديث: {lastUpdate}</p>
       </header>
       <main
@@ -37,4 +37,9 @@ export default function CovidStatus() {
       </main>
     </section>
   )
+}
+
+CovidStatus.defaultProps = {
+  url: "https://covid19.mathdro.id/api/",
+  title: "إحصائيات عالمية للمرض",
 }
