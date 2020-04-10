@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react"
 
-export default url => {
+export default ({ url }) => {
   const [error, setStateError] = useState("")
   const [data, setStateData] = useState({})
   const [counter, setCounter] = useState(0)
